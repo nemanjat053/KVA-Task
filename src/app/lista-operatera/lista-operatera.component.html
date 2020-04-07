@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Naziv</th>
+        <th scope="col">Pozivni broj</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let operater of listaOperatera">
+      <tr>
+        <th scope="row">{{ operater.id }}</th>
+        <td>{{ operater.naziv}}</td>
+        <td>{{ operater.pozivniBroj}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="detail(operater.id)">Details</button>
+            <button class="btn btn-danger" (click)="deleteOperater(operater.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <a [routerLink]="['/registracijaOperatera']" routerLinkActive="router-link-active" >Dodaj novog operatera</a>
+  </table>
+  <app-lista-operatera-detail [odabraniOperater] = "odabraniOperater"></app-lista-operatera-detail>

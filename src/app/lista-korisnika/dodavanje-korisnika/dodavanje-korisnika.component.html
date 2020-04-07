@@ -1,0 +1,27 @@
+<form [formGroup]="registrationForm" (ngSubmit)="registracija()">
+  <div class="form-group">
+    <label>Broj : </label>
+    <input type="text" class="form-control" formControlName="broj" />
+  </div>
+
+  <div class="form-group">
+    <label>Paket  : </label>
+    <select (change)="selectChangeHandler($event.target.value)">
+        <option
+          *ngFor="let paket of paketi"
+          >{{ paket | json }}</option
+        >
+      </select>
+  </div>
+
+  <div class="form-group">
+    <label>Datum prijave : </label>
+    <input type="text" class="form-control" formControlName="datumPrijave" />
+  </div>
+
+  <div class="form-group">
+    <label>Datum odjave : </label>
+    <input type="text" class="form-control" formControlName="datumOdjave" />
+  </div>
+  <button class="btn btn-primary">Dodaj</button>
+</form>

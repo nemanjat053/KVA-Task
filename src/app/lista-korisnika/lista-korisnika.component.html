@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Broj </th>
+        <th scope="col">Paket ID</th>
+        <th scope="col">Datum prijave</th>
+        <th scope="col">Datum odjave</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let korisnik of korisnici">
+      <tr>
+        <th scope="row">{{ korisnik.id }}</th>
+        <td>{{ korisnik.broj}}</td>
+        <td>{{ korisnik.paketId}}</td>
+        <td> {{ korisnik.datumPrijave }}</td>
+        <td> {{ korisnik.datumOdjave }} </td>
+        <td>
+            <button class="btn btn-primary" (click)="detail(korisnik.id)">Details</button>
+            <button class="btn btn-danger" (click)="deleteKorisnik(korisnik.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <a [routerLink]="['/registracijaKorisnika']" routerLinkActive="router-link-active" >Dodaj novog korisnika</a>
+  </table>
+
+  <app-lista-korisnika-detail [odabraniKorisnik] = "odabraniKorisnik"></app-lista-korisnika-detail>

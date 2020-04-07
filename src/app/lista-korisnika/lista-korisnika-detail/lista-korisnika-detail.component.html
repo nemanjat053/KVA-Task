@@ -1,0 +1,44 @@
+<div *ngIf="odabraniKorisnik">
+    <hr />
+    <h3>Detalji korisnika</h3>
+    <div class="form-group">
+      <label>Broj</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{ odabraniKorisnik.broj }}"
+      />
+    </div>
+    <div class="form-group">
+      <label>Paket id</label>
+      <input
+        type="text"
+        [(ngModel)]="odabraniKorisnik.paketId"
+        class="form-control"
+        value="{{ odabraniKorisnik.paketId }}"
+      />
+    </div>
+    <div class="form-group">
+      <label>Datum prijave </label>
+      <input
+        type="text"
+        [(ngModel)]="odabraniKorisnik.datumPrijave"
+        class="form-control"
+        value="{{ odabraniKorisnik.datumPrijave}}"
+      />
+    </div>
+    <div class="form-group">
+        <label>Datum Odjave </label>
+        <input
+          type="text"
+          [(ngModel)]="odabraniKorisnik.datumOdjave"
+          class="form-control"
+          value="{{ odabraniKorisnik.datumOdjave}}"
+        />
+      </div>
+    <button class="btn btn-primary" type="submit" (click)="izmjena()">Save changes</button>
+    <div *ngIf="changed" class="alert alert-success" role="alert">
+      The changes are saved !
+    </div>
+  </div>
+  

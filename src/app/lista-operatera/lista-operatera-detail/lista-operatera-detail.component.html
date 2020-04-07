@@ -1,0 +1,35 @@
+<div *ngIf="odabraniOperater">
+    <hr />
+    <h3>Detalji operatera</h3>
+    <div class="form-group">
+      <label>Id</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{ odabraniOperater.id }}"
+      />
+    </div>
+    <div class="form-group">
+      <label>Naziv</label>
+      <input
+        type="text"
+        [(ngModel)]="odabraniOperater.naziv"
+        class="form-control"
+        value="{{ odabraniOperater.naziv }}"
+      />
+    </div>
+    <div class="form-group">
+      <label>Pozivni broj </label>
+      <input
+        type="text"
+        [(ngModel)]="odabraniOperater.pozivniBroj"
+        class="form-control"
+        value="{{ odabraniOperater.pozivniBroj}}"
+      />
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="izmjena()">Save changes</button>
+    <div *ngIf="changed" class="alert alert-success" role="alert">
+      The changes are saved !
+    </div>
+  </div>
+  

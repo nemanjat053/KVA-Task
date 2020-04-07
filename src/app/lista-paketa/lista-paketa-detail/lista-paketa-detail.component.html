@@ -1,0 +1,36 @@
+<div *ngIf="odabraniPaket">
+  <hr />
+  <h3>Detalji paketa</h3>
+  <div class="form-group">
+    <label>Operator Id</label>
+    <input
+      type="text"
+      class="form-control"
+      value="{{ odabraniPaket.operaterId}}"
+    />
+  </div>
+  <div class="form-group">
+    <label>Naziv</label>
+    <input
+      type="text"
+      [(ngModel)]="odabraniPaket.naziv"
+      class="form-control"
+      value="{{ odabraniPaket.naziv }}"
+    />
+  </div>
+  <div class="form-group">
+    <label>Cena </label>
+    <input
+      type="text"
+      [(ngModel)]="odabraniPaket.cena"
+      class="form-control"
+      value="{{ odabraniPaket.cena }}"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit" (click)="izmjena()">
+    Save changes
+  </button>
+  <div *ngIf="changed" class="alert alert-success" role="alert">
+    The changes are saved !
+  </div>
+</div>

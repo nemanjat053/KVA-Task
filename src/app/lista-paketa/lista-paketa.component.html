@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Operator id</th>
+      <th scope="col">Naziv</th>
+      <th scope="col">Cena</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let paket of listaPaketa">
+    <tr>
+      <th scope="row">{{ paket.id }}</th>
+      <td>{{ paket.operaterId }}</td>
+      <td>{{ paket.naziv }}</td>
+      <td>{{ paket.cena }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="detail(paket.id)">
+          Details
+        </button>
+        <button class="btn btn-danger" (click)="deletePaket(paket.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+  <a [routerLink]="['/registracijaPaketa']" routerLinkActive="router-link-active" >Dodaj novi paket</a>
+</table>
+<app-lista-paketa-detail [odabraniPaket]="odabraniPaket" ></app-lista-paketa-detail>
